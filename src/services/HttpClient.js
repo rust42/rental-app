@@ -46,6 +46,7 @@ class HttpClient {
     }
 }
 
-const defaultClient = new HttpClient("http://localhost:8080")
+console.log(process.env);
+const defaultClient = new HttpClient(process.env.REACT_APP_AUTH_URL);
 
 export default defaultClient;
