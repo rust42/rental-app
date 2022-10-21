@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rental-app-frontend
+spec:
+  selector:
+    matchLabels:
+      app: rental-app-frontend
+
+  template:
+    metadata:
+      labels:
+        app: rental-app-frontend
+    spec:
+      containers:
+        - name: rental-app
+          image: ghcr.io/rust42/rental-app:main
+          ports:
+            - containerPort: 3000
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: rental-app-svc
+spec:
+  selector:
+    app: rental-app-frontend
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 3000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: rental-app-ingress
+spec:
+  rules:
+    - host: /
+      http:
+        paths:
+          - backend:
+              service:
+                name: rental-app-svc
+            pathType: Prefix
+            path: /
+
