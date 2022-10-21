@@ -46,7 +46,6 @@ class HttpClient {
     }
 }
 
-console.log(process.env);
 const defaultClient = new HttpClient(process.env.REACT_APP_AUTH_URL);
 
 export default defaultClient;
