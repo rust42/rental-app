@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: rental-app
-          image: localhost:5010/frontend:latest
+          image: ghcr.io/rust42/rental-app:main
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
