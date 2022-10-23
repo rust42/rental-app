@@ -1,6 +1,7 @@
 import axios from "axios";
 
 class HttpClient {
+    #localStorageKey = "edu.miu.cs590.car-reservation.token.storage.key";
     #baseURL;
     #token;
 

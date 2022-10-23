@@ -1,9 +1,33 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { sigin, signup } from "../services/UserService";
+import { sigin } from "../services/UserService";
+import HttpClient from "../services/HttpClient";
+
+const userStorageKey = "edu.miu.cs590.car-reservation.token.storage.key";
+
+const storeUserDetail = (userDetail) => {
+    HttpClient.setAuthenticationToken(userDetail.token);
+    if (userDetail) {
+        localStorage.setItem(userStorageKey, JSON.stringify(userDetail));
+    }
+}
+
+const retrieveUserDetail = () => {
+    const userDetailString =  localStorage.getItem(userStorageKey);
+    if (userDetailString) {
+        const userDetail = JSON.parse(userDetailString);
+        HttpClient.setAuthenticationToken(userDetail.token);
+        return userDetail;
+    }
+    return null;
+}
+
+const clearUserDetail = () => {
+    localStorage.removeItem(userStorageKey);
+};
 
 const initialState = {
     login: {
-        user: null,
+        user: retrieveUserDetail(userStorageKey),
         loading: 'idle',
         error: null,    
     },
@@ -17,12 +41,17 @@ const loginUser = createAsyncThunk(
     "/api/auth/signin",
     async (data, { rejectWithValue }) => {
         try {
-            return await sigin(data);
+            const response = await sigin(data);
+            if (response && response.email && response.token) {
+                storeUserDetail(response);
+            }
+            return response;
         } catch (error) {
             return rejectWithValue(error);
         }
     }
 );
+
 
 const authSlice = createSlice({
     name: "/api/auth/signin",
@@ -30,6 +59,7 @@ const authSlice = createSlice({
     reducers: {
         logout: (state) => {
             state.login.user = null;
+            clearUserDetail();
         }
     },
     extraReducers: {

@@ -6,7 +6,10 @@ import {
     TextField,
     FormControlLabel,
     Paper,
-    Button
+    Button,
+    Backdrop,
+    CircularProgress,
+
   } from '@mui/material';
 
 import { useDispatch, useSelector } from "react-redux";
@@ -21,13 +24,13 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const user =  useSelector(selector => selector.login.user);
+    const login =  useSelector(selector => selector.login);
 
     useEffect(() => {
-      if (user != null) {
+      if (login.user != null) {
         navigate("/");
       }  
-    }, [user]);
+    }, [login]);
 
     const handleChange = (event) => {
       setChecked(event.target.checked);
@@ -39,6 +42,12 @@ const Login = () => {
 
   return (
       <div style={{ padding: 30 }}>
+          <Backdrop
+          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={login.loading === 'pending'}>
+          <CircularProgress color="inherit" />
+        </Backdrop>
+
         <Paper>
           <Grid
             container
