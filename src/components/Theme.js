@@ -1,7 +1,5 @@
 import { createTheme } from '@mui/material';
 
-const palette = createTheme();
-
 export const theme = createTheme({
   palette: {
     status: {

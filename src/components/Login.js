@@ -30,7 +30,7 @@ const Login = () => {
       if (login.user != null) {
         navigate("/");
       }  
-    }, [login]);
+    }, [login, navigate]);
 
     const handleChange = (event) => {
       setChecked(event.target.checked);
