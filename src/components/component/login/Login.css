@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.loginbody{
+    display: block;
+    margin-top: 100px;
+    background-color: rgb(225, 240, 252);
+
+
+}
+
+.css-5jb75g-MuiPaper-root{
+    margin-top: 200px  ;
+    padding: 0px;
+    
+}
+.css-5jb75g-MuiPaper-root{
+    background-color: aqua;
+}
+
+.css-wki563-MuiInputBase-root-MuiOutlinedInput-root{
+    margin-bottom: 20px;
+
+}
+
+.keepme{
+    margin: 50px;
+}
+
+
+

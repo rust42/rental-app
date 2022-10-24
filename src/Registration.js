@@ -9,7 +9,8 @@ import {
     CircularProgress,
     Typography
   } from '@mui/material';
-import { signup } from "../services/UserService";
+// import { signup } from "/services/UserService";
+  import { signup } from "../src/services/UserService"
 
 const Registration = () => {
     const [firstName, setFirstName] = useState("");

@@ -1,0 +1,83 @@
+.mainbody{
+    display: flex;
+    background-color: #62B16E;
+    height: 220px;
+    align-items: center;
+
+}
+
+.logotext{
+   
+    font-size: xx-large;
+    font-weight: bolder;
+
+}
+
+.logo{
+    width: 35%;
+    display: flex;
+}
+
+.logoimage{
+    width: 30%;
+    margin: 0px 60px;
+}
+.logoimage img{
+    height: 200px;
+    border-radius: 50%;
+}
+
+.navbars{
+    display: block;
+    width: 65%;
+    height: 100%;
+
+}
+
+.firstnavbar{
+    height: 50%;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: rgb(1, 134, 1); */
+    background-color: #61b66e;
+    font-size: large;
+    font-weight: bold;
+}
+
+.secondnavbar{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-color: rgb(4, 156, 4); */
+    background-color: #58ad65;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.firstnavbar a {
+    color: blue;
+}
+.secondnavbar a {
+    color: brown;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+.firstnavbar .sign{
+    display: grid;
+}
+.button{
+    background-color: rgb(111, 176, 12);
+    padding: 4px;
+    font-size: large;
+    font-weight: bold;
+    margin: 2px ;
+    border-color: rgb(92, 142, 17);
+    color:chartreuse
+}
