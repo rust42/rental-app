@@ -11,7 +11,6 @@ const getAllVehicleList = async () => {
 
 
 const getVehicleById = async (id) => {
-    console.log("calle.dd")
     try {
         return await HttpClient.get(`/vehicles/${id}`);
     }
