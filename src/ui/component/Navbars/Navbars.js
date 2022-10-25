@@ -32,12 +32,12 @@ const Navbars = () => {
                           {/* <button className="button"
                           // onClick={"http://localhost:3000/login"}> SIGN IN </button>
                           onClick={"/login"}> SIGN IN </button> */}
-                          <a href="login" >
+                          <a href="login">
                             <button className="button"> SIGN IN </button>
                           </a>
                            Don't you have an account
                           {/* <a href=""> SIGN UP </a> */}
-                          <a href="registration" >
+                          <a href="registration">
                             <button className="button"> SIGN UP </button>
                           </a>
                           {/* <button className="button"

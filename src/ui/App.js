@@ -1,10 +1,11 @@
 import '../styles/App.css';
 import { Routes, BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home';
-import Login from '../services/HttpClient';
+// import Login from '../services/HttpClient';
+import Login from '../ui/component/login/Login';
 import { theme } from './Theme';
 import { ThemeProvider } from '@emotion/react';
-import Registration from '../Registration';
+import Registration from '../ui/component/Registration/Registration';
 
 function App() {
   return (

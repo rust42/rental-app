@@ -58,7 +58,13 @@ const Login = () => {
             alignItems={'center'}
           > */}
 
+          <h1 className="text"> SIGN IN </h1>
+          <h2 className="text2"> AND  </h2> <br/> 
+          <h2 className="text"> GET THE ACCESS </h2>
+
           <div className="loginbody">
+
+           
             <Grid className="username" item xs={12}> 
               <TextField className="username" value={email} onChange={(event) => setEmail(event.target.value)} label="Username"></TextField>
             </Grid>
