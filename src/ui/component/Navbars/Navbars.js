@@ -11,7 +11,8 @@ const Navbars = () => {
               </div>
               <div className="logotext">
                 <h1> SA BROS </h1> 
-                <h5> Rent a car </h5>
+                <h4> Rent a car </h4> <br/>
+                <h5> MIU rental service </h5>
               </div>
              
 
@@ -26,24 +27,12 @@ const Navbars = () => {
                         <a href=""> LANGUAGE </a>
                         <a href=""> FIND A LOCATION </a>
                         
-                        <div className="sign">
-                           Do you have an account 
-                          {/* <a href=""> SIGN IN </a> */}
-                          {/* <button className="button"
-                          // onClick={"http://localhost:3000/login"}> SIGN IN </button>
-                          onClick={"/login"}> SIGN IN </button> */}
                           <a href="login">
                             <button className="button"> SIGN IN </button>
                           </a>
-                           Don't you have an account
-                          {/* <a href=""> SIGN UP </a> */}
                           <a href="registration">
                             <button className="button"> SIGN UP </button>
                           </a>
-                          {/* <button className="button"
-                          onClick={"http://localhost:3000/registration"}> SIGN UP </button> */}
-                        </div>
-                        
 
               </div>
               

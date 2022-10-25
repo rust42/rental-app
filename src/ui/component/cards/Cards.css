@@ -2,21 +2,24 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    margin-top: 5vh;
 }
 
 
 .cardscontainer{
     display: flex;
     /* background: #62B16E; */
-    background: #60b36c;
+    /* background: #60b36c; */
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 5vh;
 
 }
 
 .card{
     /* background:whitesmoke; */
-    background:white;
+    /* background-color: #62B16E; */
+    background-color: #FEFCD0;
     width: 300px;
     /* height: 35 0px; */
     margin: 10px;
@@ -34,28 +37,30 @@
 
 }
 .car1{
-    background-image: url(car1.webp);
+    background-image: url(images/sedan.webp);
 }
 
 .car2{
-    background-image: url(car1.webp);
+    /* background-image: url(car1.webp); */
+    background-image: url(images/convertible.jpeg);
 }
 
 .car3{
-    background-image: url(car1.webp);
+    background-image: url(images/car1.webp);
 }
 
 
 .car4{
-    background-image: url(car1.webp);
+    background-image: url(images/minivan.webp);
 }
 
 .car5{
-    background-image: url(car1.webp);
+    background-image: url(images/truck.jpeg);
 }
 
 .card a{
     background-color: #60b36c;
+    background-color:  #F9EEBD;
     color: black;
     padding: 15px 20px;
     display: block;
@@ -67,6 +72,7 @@
 
 .card:hover{
     background-color: rgb(150, 194, 233);
+    background-color:  #D0DB61;
     /* background-color: blue; */
     /* background-color: #44914f; */
     cursor: pointer;

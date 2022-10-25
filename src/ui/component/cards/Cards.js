@@ -3,6 +3,7 @@ import "../cards/Cards.css"
 const Cards = () => {
   return (
     <div className="cardscontainer">
+        
         <div className="card">
             <div className="cardimage car1"> </div>
             <h2> SEDAN </h2> <br/>

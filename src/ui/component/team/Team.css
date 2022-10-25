@@ -1,0 +1,53 @@
+.team{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.teamtext{
+    display:contents;
+    width: 30%;
+}
+
+.teamtext h1{
+    color: red;
+    font-family: cursive;
+}
+
+.teamcontact{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact img{
+    border-radius: 50%;
+}
+
+.teamtext .meet{
+    margin-bottom: 200px;
+    margin-left: 40px;
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+
+.teamtext .the{
+    font-weight: bolder;
+    font-size: xxx-large;
+    color: blue;
+}
+
+.teamtext .pro{
+    margin-top: 200px;
+    margin-right: 40px;
+    font-weight: bolder;
+    font-size: xxx-large;
+}
+/* hr{
+    display: inline;
+    background-color: green;
+} */
+
