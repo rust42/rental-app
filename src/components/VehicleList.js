@@ -1,23 +1,19 @@
 import React, { useEffect } from 'react'
-import { fetchVehicles } from '../reducers/vehicle'
+import { fetchVehicles as getVehicles } from '../reducers/vehicle'
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from '@mui/material';
 
 export default function Vehicle() {
-
-    // const [loading, setLoading] = useState();
-
     const dispatch = useDispatch();
     const vehicleState = useSelector(selector => selector.vehicles);
-    const { http, vehicleList } = vehicleState
+    const { http } = vehicleState
 
-    console.log(vehicleState)
     useEffect(() => {
-        _init()
+        fetchVehicles()
     }, [])
 
-    const _init = async () => {
-        dispatch(fetchVehicles())
+    const fetchVehicles = async () => {
+        dispatch(getVehicles())
     }
 
 

@@ -54,7 +54,7 @@ export default function VehicleDetail() {
     console.log(`===review`, reviewState)
 
 
-    const { http, vehicleDetail } = vehicleState;
+    const { vehicleDetail } = vehicleState;
 
     const submitReview = async () => {
 

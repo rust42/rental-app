@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, createAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { getAllVehicleList, getVehicleById } from './../services/VehicleService'
 const initialState = {
@@ -101,49 +101,6 @@ const vehicleListSlice = createSlice({
     },
 
 });
-
-
-
-
-
-
-
-// const vehicleByIdSlice = createSlice({
-//     name: "/api/vehicles/:id",
-//     initialState,
-//     reducers: {
-
-//     },
-//     extraReducers: {
-//         [vehicleByIdSlice.pending]: (state) => {
-//             const http = state.http;
-//             http.loading = true;
-//             http.success = false;
-//             http.error = null;
-//             state.vehicleDetail = null
-//         },
-
-//         [vehicleByIdSlice.fulfilled]: (state, action) => {
-
-//             const http = state.http;
-//             http.loading = false;
-//             http.success = true;
-//             http.error = null;
-//             state.vehicleDetail = action.payload;
-
-
-//         },
-
-//         [vehicleByIdSlice.rejected]: (state, action) => {
-//             const http = state.http;
-//             http.loading = false;
-//             http.success = false;
-//             http.error = action.payload;
-//             state.vehicleDetail = null
-//         },
-//     }
-// });
-
 
 export default vehicleListSlice.reducer
 export { fetchVehicles, fetchVehicleById } 
