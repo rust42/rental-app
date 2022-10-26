@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useLocation, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom';
 import Stripe from "react-stripe-checkout";
-import { bookVehicle, payBooking } from '../../../reducers/booking'
+import { payBooking } from '../../../reducers/booking'
 import { getBookingDetailById } from '../../../reducers/booking';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,7 +23,7 @@ export default function BookingDetail() {
 
             setLoading(false)
         })
-    }, [id])
+    }, [id, dispatch])
 
 
     const [description] = useState(`Confirm Booking`)

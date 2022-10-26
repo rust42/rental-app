@@ -1,8 +1,6 @@
 
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { userStorageKey } from "../../../../reducers/auth";
-import { Redirect } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { bookVehicle } from '././../../../../reducers/booking'
 const VehicleItem = ({ vehicle, bookingDate }) => {
 
@@ -52,9 +50,9 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
             </div>
 
             <div className="actions">
-                <a href=""> Online check in </a> <br />
-                <a href=""> Payment procedure </a> <br />
-                <a href=""> Free cancellation </a>
+                <a href="/"> Online check in </a> <br />
+                <a href="/"> Payment procedure </a> <br />
+                <a href="/"> Free cancellation </a>
             </div>
 
             <div className="impdetails">

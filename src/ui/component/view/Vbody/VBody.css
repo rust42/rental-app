@@ -45,26 +45,11 @@
     height: 20vh;
 }
 
-.details{
-    
-}
-
-.viewcard a{
-    /* background-color:  #F9EEBD;
-    color: black;
-    padding: 15px 20px;
-    display: block;
-    text-align: center;
-    margin: 20px 50px ;
-    border-radius: 20px; */
-    
-}
-
 .recommended *{
     height: 5vh;
 
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .recommended .form {

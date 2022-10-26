@@ -1,4 +1,4 @@
-import { useLocation, useSearchParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import Navbars from "../Navbars/Navbars"
 import VBody from "./Vbody/VBody"
 import VehicleItem from './Vbody/VehicleItem';
@@ -11,7 +11,7 @@ import SortBar from "./Vbody/SortBar";
 
 const View = () => {
 
-  const { search, query } = useLocation();
+  const { search } = useLocation();
 
   const dispatch = useDispatch();
   const vehicleState = useSelector(selector => selector.vehicles);
@@ -22,11 +22,9 @@ const View = () => {
     pickupDate
   }
 
-  console.log("==objParam", objParam)
   useEffect(() => {
-
     fetchVehicles()
-  }, [])
+  })
 
   const fetchVehicles = async () => {
     dispatch(getVehicles(objParam))

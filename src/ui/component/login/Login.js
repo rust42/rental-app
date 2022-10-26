@@ -8,14 +8,11 @@ import {
   FormControlLabel,
   Paper,
   Button,
-  Backdrop,
-  CircularProgress,
-
 } from '@mui/material';
 
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../../reducers/auth";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -26,20 +23,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const login = useSelector(selector => selector?.login?.login);
-  const searchParam = useSearchParams();
-
-  const { pathname, search } = useLocation();
+  const { search } = useLocation();
   const redirectPath = search?.replace("?redirect=", "")
   useEffect(() => {
     if (login.user != null) {
-      if (redirectPath != "") {
+      if (redirectPath !== "") {
         navigate(redirectPath)
       } else {
         navigate("/");
 
       }
     }
-  }, [login, navigate]);
+  }, [login, navigate, redirectPath]);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
