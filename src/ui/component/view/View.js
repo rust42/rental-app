@@ -3,7 +3,7 @@ import Navbars from "../Navbars/Navbars"
 import VBody from "./Vbody/VBody"
 import VehicleItem from './Vbody/VehicleItem';
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { fetchVehicles as getVehicles } from "../../../reducers/vehicle";
 import { Box, CircularProgress } from "@mui/material";
 
@@ -11,24 +11,17 @@ import SortBar from "./Vbody/SortBar";
 
 const View = () => {
 
-  // const { search } = useLocation();
+  const { search } = useLocation();
 
   const dispatch = useDispatch();
   const vehicleState = useSelector(selector => selector.vehicles);
   const { http, vehicleList } = vehicleState
 
-  // const objParam = Object.fromEntries(new URLSearchParams(search));
+  const objParam = Object.fromEntries(new URLSearchParams(search));
 
-  const objParam = {};
-  
   useEffect(() => {
-
-    const fetchVehicles = async () => {
-      dispatch(getVehicles(objParam))
-    }
-
-    fetchVehicles()
-  }, [dispatch, objParam, vehicleList])
+    dispatch(getVehicles(objParam))
+  }, [dispatch])
 
   return (
     <>
