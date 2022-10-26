@@ -60,16 +60,17 @@
     
 }
 
-.recommended{
-    height: 5vh;
-}
-
 .recommended *{
-    /* padding: 0.8vh;
-    background-color: bisque;
-    display: -ms-inline-flexbox; */
+    height: 5vh;
+
+    display: flex;
+    justify-content: end;
 }
 
+.recommended .form {
+    margin-top: 2em;
+    margin-right: 2.3em;
+}
 .name{
     padding: 0.8vh;
     background-color: bisque;
@@ -90,6 +91,7 @@
     list-style: none;
     padding: 0;
     align-items: center;
+    margin-top: 0.5em;
 }
 
 .impdetails .price{
@@ -105,4 +107,8 @@
     color: blue;
     font-size: large;
 
+}
+
+.vechicledetails h2{
+    color: blue;
 }
