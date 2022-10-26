@@ -2,11 +2,15 @@ import React, { useEffect } from 'react'
 import { fetchVehicles as getVehicles } from '../reducers/vehicle'
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from '@mui/material';
+import LoadingIndicator from './LoadingIndicator';
+import { Backdrop, CircularProgress } from "@mui/material";
+import VehicleItem from './VehicleItem';
+
 
 export default function Vehicle() {
     const dispatch = useDispatch();
     const vehicleState = useSelector(selector => selector.vehicles);
-    const { http } = vehicleState
+    const { http, vehicleList } = vehicleState
 
     useEffect(() => {
         fetchVehicles()
@@ -16,17 +20,9 @@ export default function Vehicle() {
         dispatch(getVehicles())
     }
 
+    if (http.loading) {
+        return <LoadingIndicator loading={http?.loading}/>;
+    }
 
-    if (http?.loading) return (<div>Loading....</div>)
-    if (!http?.success) return (<div>
-        ${JSON.stringify(http?.error)}
-    </div>)
-
-    return (
-
-
-        < div >
-            <Button onClick={() => dispatch(fetchVehicles())}>Click me!</Button>
-        </div >
-    )
-}
+    return vehicleList.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle}/>);
+};

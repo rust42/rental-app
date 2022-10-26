@@ -12,8 +12,6 @@ const initialState = {
 }
 
 
-
-
 const fetchVehicles = createAsyncThunk(
     "/api/vehicles",
     async (data, { rejectWithValue }) => {
@@ -54,14 +52,11 @@ const vehicleListSlice = createSlice({
         },
 
         [fetchVehicles.fulfilled]: (state, action) => {
-            console.log("dsf", action)
             const http = state.http;
             http.loading = false;
             http.success = true;
             http.error = null;
             state.vehicleList = action.payload;
-
-
         },
 
         [fetchVehicles.rejected]: (state, action) => {
