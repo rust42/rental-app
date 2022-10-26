@@ -3,18 +3,24 @@
     background-color: #62B16E;
     height: 100px;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
 .logotext{
-   color: white;
+    display: flex;
+    flex-direction: column;
+   flex-wrap: wrap;
+    color: white;
     font-size: 15px;
     font-weight: bold;
+
 }
 
 .logo{
     width: 25%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .logoimage{
@@ -40,6 +46,7 @@
     justify-content: space-evenly;
     font-size: 16px;
     font-weight: 600;
+    flex-wrap: wrap;
 }
 
 .secondnavbar{
@@ -50,6 +57,7 @@
     font-size: large;
     font-weight: bold;
     background-color: #58a764;
+    flex-wrap: wrap;
 
 }
 

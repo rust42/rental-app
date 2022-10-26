@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+   
 }
 
 .teamtext{
@@ -21,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .contact img{
