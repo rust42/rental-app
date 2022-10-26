@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { sigin } from "../services/UserService";
 import HttpClient from "../services/HttpClient";
 
-const userStorageKey = "edu.miu.cs590.car-reservation.token.storage.key";
+export const userStorageKey = "edu.miu.cs590.car-reservation.token.storage.key";
 
 const storeUserDetail = (userDetail) => {
     HttpClient.setAuthenticationToken(userDetail.token);
@@ -12,7 +12,7 @@ const storeUserDetail = (userDetail) => {
 }
 
 const retrieveUserDetail = () => {
-    const userDetailString =  localStorage.getItem(userStorageKey);
+    const userDetailString = localStorage.getItem(userStorageKey);
     if (userDetailString) {
         const userDetail = JSON.parse(userDetailString);
         HttpClient.setAuthenticationToken(userDetail.token);
@@ -29,7 +29,7 @@ const initialState = {
     login: {
         user: retrieveUserDetail(userStorageKey),
         loading: 'idle',
-        error: null,    
+        error: null,
     },
     registration: {
         loading: 'idle',
@@ -63,7 +63,7 @@ const authSlice = createSlice({
         }
     },
     extraReducers: {
-        [loginUser.pending]:  (state) => {
+        [loginUser.pending]: (state) => {
             const login = state.login;
             login.loading = 'pending';
             login.user = null;

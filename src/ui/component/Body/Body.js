@@ -25,7 +25,13 @@ const Body = () => {
   });
 
   const searchButtonClicked = () => {
-    navigate('/view', { state: dates });
+    navigate({
+      pathname: '/view',
+      search: `?pickupDate=${format(dates.startDate, "yyyy-MM-dd")}&&returnDate=${format(
+        dates.endDate,
+        "yyyy-MM-dd"
+      )}`
+    });
   };
 
   return (

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom"
+import { useLocation, useSearchParams } from "react-router-dom"
 import Navbars from "../Navbars/Navbars"
 import VBody from "./Vbody/VBody"
 import VehicleItem from './Vbody/VehicleItem';
@@ -11,18 +11,18 @@ import SortBar from "./Vbody/SortBar";
 
 
 const View = () => {
-  const location = useLocation();
+  const { search, query } = useLocation();
 
   const dispatch = useDispatch();
   const vehicleState = useSelector(selector => selector.vehicles);
   const { http, vehicleList } = vehicleState
-  const { state } = useLocation();
-
+  const { pickupDate, returnDate } = Object.fromEntries(new URLSearchParams(search));
   const objParam = {
-    returnDate: state.endDate,
-    pickupDate: state.startDate
+    returnDate,
+    pickupDate
   }
 
+  console.log("==objParam", objParam)
   useEffect(() => {
     fetchVehicles()
   }, [])
@@ -42,7 +42,7 @@ const View = () => {
           </div>}
         <SortBar />
 
-        {vehicleList.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle} />)}
+        {vehicleList.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle} bookingDate={objParam} />)}
       </VBody>
     </>
 
