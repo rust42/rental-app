@@ -9,6 +9,7 @@ import Registration from '../ui/component/Registration/Registration';
 import View from './component/view/View';
 import VehicleDetail from './VehicleDetail';
 import BookingDetail from './component/bookingDetail/bookingDetail';
+import Notify from './component/transactionprocess/Notify';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Route path='/view' element={<View />}></Route>
             <Route path="/vehicles/:id" element={<VehicleDetail />}></Route>
             <Route path="/booking/details/:id" element={<BookingDetail />}></Route>
-
+            <Route path='/notify' element={<Notify/>}> </Route> 
 
             <Route index element={<Home />}></Route>
           </Routes>

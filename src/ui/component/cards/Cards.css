@@ -37,25 +37,25 @@
 
 }
 .car1{
-    background-image: 'image/sedan.webp';
+    background-image: url('sedan.webp');
 }
 
 .car2{
     /* background-image: url(car1.webp); */
-    background-image: 'image/convertible.jpeg';
+    background-image: url('convertible.jpeg');
 }
 
 .car3{
-    background-image: 'images/car1.webp';
+    background-image: url('car1.webp');
 }
 
 
 .car4{
-    background-image: 'images/minivan.webp';
+    background-image: url("minivan.webp");
 }
 
 .car5{
-    background-image: 'images/truck.jpeg';
+    background-image: url('truck.jpeg');
 }
 
 .card a{
