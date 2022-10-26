@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../login/Login.css"
 
 import {
     Checkbox,
@@ -13,7 +14,7 @@ import {
   } from '@mui/material';
 
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../reducers/auth";
+import { loginUser } from "../../../reducers/auth";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -41,7 +42,7 @@ const Login = () => {
     };
 
   return (
-      <div style={{ padding: 30 }}>
+      <div className="login">
           <Backdrop
           sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={login.loading === 'pending'}>
@@ -49,19 +50,30 @@ const Login = () => {
         </Backdrop>
 
         <Paper>
-          <Grid
+          {/* <Grid className="gridview"
             container
             spacing={3}
             direction={'column'}
             justify={'center'}
             alignItems={'center'}
-          >
-            <Grid item xs={12}>
-              <TextField value={email} onChange={(event) => setEmail(event.target.value)} label="Username"></TextField>
+          > */}
+
+          <h1 className="text"> SIGN IN </h1>
+          <h2 className="text2"> AND  </h2> <br/> 
+          <h2 className="text"> GET THE ACCESS </h2>
+
+          <div className="loginbody">
+
+           
+            <Grid className="username" item xs={12}> 
+              <TextField className="username" value={email} onChange={(event) => setEmail(event.target.value)} label="Username"></TextField>
             </Grid>
-            <Grid item xs={12}>
-              <TextField label="Password" value={password} onChange={(event) => setPassword(event.target.value)} type={'password'}></TextField>
+
+            <Grid className="password" item xs={12}>
+              <TextField className="password" label="Password" value={password} onChange={(event) => setPassword(event.target.value)} type={'password'}></TextField>
             </Grid>
+
+            <div className="keepme" >
             <Grid item xs={12}>
               <FormControlLabel
                 control={
@@ -75,10 +87,18 @@ const Login = () => {
                 label="Keep me logged in"
               />
             </Grid>
+
+            </div>
+
+
+
             <Grid item xs={12}>
-              <Button fullWidth onClick={loginButtonClicked}> Login </Button>
+              <Button className="loginbutton" fullWidth onClick={loginButtonClicked}> Login </Button>
             </Grid>
-          </Grid>
+
+          </div>
+            
+          {/* </Grid> */}
         </Paper>
       </div>
     );

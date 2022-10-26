@@ -1,0 +1,79 @@
+.mainbody{
+    display: flex;
+    background-color: #62B16E;
+    height: 100px;
+    align-items: center;
+
+}
+
+.logotext{
+   color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.logo{
+    width: 25%;
+    display: flex;
+}
+
+.logoimage{
+    width: 20%;
+    margin: 0px 60px;
+}
+.logoimage img{
+    height: 80px;
+    border-radius: 50%;
+}
+
+.navbars{
+    display: block;
+    width: 75%;
+    height: 100%;
+
+}
+
+.firstnavbar{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.secondnavbar{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: large;
+    font-weight: bold;
+    background-color: #58a764;
+
+}
+
+.firstnavbar a {
+    color: blue;
+}
+.secondnavbar a {
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+.firstnavbar .sign{
+    display: grid;
+}
+.button{
+    background-color: rgb(111, 176, 12);
+    padding: 4px;
+    font-size: large;
+    font-weight: bold;
+    margin: 2px ;
+    border-color: rgb(92, 142, 17);
+    color:whitesmoke;
+}

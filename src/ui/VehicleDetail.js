@@ -128,10 +128,7 @@ export default function VehicleDetail() {
                     </Grid>
                 </Box>
             </Modal>
-        </div>
-    );
-
-
+        </div>);
 
     return (
         <div>
