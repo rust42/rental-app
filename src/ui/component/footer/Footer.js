@@ -14,8 +14,10 @@ const Footer = () => {
           <li className="items">Sign In</li>
           <li className="items">Sign Up </li>
           <li className="items">Help & FAQs </li>
+
         </ul>
 
+        
 
       <ul className="itemlist">
       <h3> <li className="items"> RESERVATIONS </li> </h3>

@@ -10,7 +10,7 @@
   padding: 50px;
 }
 
-.searchbar{
+.searchbars{
   width: 45vh;
   height: 5vh;
 
@@ -19,7 +19,15 @@
 .tagline{
   font-size: 1em;
 }
-.searchbar button{
- 
+.searchbars button{
   height: 4vh;
+  width: 15vh;
+  border-radius: 10%;
+  margin-top: 0.5em;
+}
+
+.inputfield{
+  width: inherit;
+  padding: 1em;
+
 }

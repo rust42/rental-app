@@ -1,0 +1,108 @@
+.viewbody{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+ 
+}
+
+.filters{
+    width: 40%;
+}
+
+.filterlist{
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+
+.viewcards{
+    width: 55%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    height: 100%;
+    margin: 5vh 10vh;
+  
+}
+
+.viewcard{
+    background-color:  #3cbd7d;
+    margin: 30px;
+    display: flex;
+    height: 18vh;
+}
+
+.cardimg{ 
+    background-color: rgb(226, 239, 251);
+    height: 100%;
+    margin-bottom: 18px;
+    background-size:auto;
+    border-radius: 20px 0px 0px 20px;
+
+
+}
+.cardimg img{
+    height: 20vh;
+}
+
+.details{
+    
+}
+
+.viewcard a{
+    /* background-color:  #F9EEBD;
+    color: black;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px ;
+    border-radius: 20px; */
+    
+}
+
+.recommended{
+    height: 5vh;
+}
+
+.recommended *{
+    /* padding: 0.8vh;
+    background-color: bisque;
+    display: -ms-inline-flexbox; */
+}
+
+.name{
+    padding: 0.8vh;
+    background-color: bisque;
+    display: -ms-inline-flexbox;
+    font-size: 1em;
+}
+
+
+.details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.lists{
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+
+.impdetails .price{
+    font-size: 2.5em;
+    color: aliceblue;
+
+}
+
+.buttons{
+    padding: 0.5em;
+    margin-top: 0.8em;
+    border-radius: 8%;
+    color: blue;
+    font-size: large;
+
+}

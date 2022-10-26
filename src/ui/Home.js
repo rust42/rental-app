@@ -11,8 +11,7 @@ const Home = () => {
     
            <Navbars/>
            <Body/>
-           <Cards/>
-           
+           <Cards/> 
            <Team/>
            <Summary/>
            <Footer/>

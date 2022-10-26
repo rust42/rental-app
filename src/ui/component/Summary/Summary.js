@@ -8,8 +8,8 @@ const Summary = () => {
       {/* <h1 className="heading">Making Your Trip Better!!! </h1> */}
       <h1 className="heading">Wanna Make Your <br/> Trip Better!!! </h1>
       <span className="tagline">Sign up and we'll forward the best deals to you</span>
-      <div className="searchbar">
-        <input type="text" placeholder=" Email US " />
+      <div className="searchbars">
+        <input className="inputfield" type="text" placeholder=" Email US "/>
         <button className="button"> Send </button>
       </div>
     </div>
