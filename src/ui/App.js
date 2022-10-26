@@ -10,6 +10,7 @@ import View from './component/view/View';
 import VehicleDetail from './VehicleDetail';
 import BookingDetail from './component/bookingDetail/bookingDetail';
 import Notify from './component/transactionprocess/Notify';
+import Details from './component/Details/Details';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/vehicles/:id" element={<VehicleDetail />}></Route>
             <Route path="/booking/details/:id" element={<BookingDetail />}></Route>
             <Route path='/notify' element={<Notify/>}> </Route> 
+            <Route path='/details' element={<Details/>}> </Route> 
 
             <Route index element={<Home />}></Route>
           </Routes>
