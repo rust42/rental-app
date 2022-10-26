@@ -1,22 +1,34 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { getAllVehicleList, getVehicleById } from './../services/VehicleService'
+import { createBooking, getBookById } from '../services/booking'
 const initialState = {
-    vehicleList: [],
+    // vehicleList: [],
     http: {
         loading: false,
         success: false,
         error: null
     },
-    vehicleDetail: null
+    bookingDetail: null
 }
 
 
-const fetchVehicles = createAsyncThunk(
-    "/api/vehicles",
+const bookVehicle = createAsyncThunk(
+    "/api/bookings",
     async (data, { rejectWithValue }) => {
         try {
-            const response = await getAllVehicleList(data);
+            const response = await createBooking(data);
+            return response;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    }
+);
+
+const payBooking = createAsyncThunk(
+    "/api/bookings",
+    async (data, { rejectWithValue }) => {
+        try {
+            const response = await createBooking(data);
             return response;
         } catch (error) {
             return rejectWithValue(error);
@@ -25,77 +37,77 @@ const fetchVehicles = createAsyncThunk(
 );
 
 
-
-const fetchVehicleById = createAsyncThunk(
-    "/api/vehicles/:id",
+const getBookingDetailById = createAsyncThunk(
+    "/api/bookings",
     async (data, { rejectWithValue }) => {
         try {
-            return await getVehicleById(data);
+            const response = await getBookById(data);
+            return response;
         } catch (error) {
             return rejectWithValue(error);
         }
     }
 );
 
-const vehicleListSlice = createSlice({
+const bookingSlice = createSlice({
     name: "/api/vehicles",
     initialState,
     reducers: {
     },
     extraReducers: {
-        [fetchVehicles.pending]: (state) => {
+        [bookVehicle.pending]: (state) => {
             const http = state.http;
             http.loading = true;
             http.success = false;
             http.error = null;
-            state.vehicleList = []
+            state.bookingDetail = null
         },
 
-        [fetchVehicles.fulfilled]: (state, action) => {
+        [bookVehicle.fulfilled]: (state, action) => {
             const http = state.http;
             http.loading = false;
             http.success = true;
             http.error = null;
-            state.vehicleList = action.payload;
+            state.bookingDetail = action.payload;
+
         },
 
-        [fetchVehicles.rejected]: (state, action) => {
+        [bookVehicle.rejected]: (state, action) => {
             const http = state.http;
             http.loading = false;
             http.success = false;
             http.error = action.payload;
-            state.vehicleList = [];
+            state.bookingDetail = null
         },
 
-        [fetchVehicleById.pending]: (state) => {
+        [getBookingDetailById.pending]: (state) => {
             const http = state.http;
             http.loading = true;
             http.success = false;
             http.error = null;
-            state.vehicleDetail = null
+            state.bookingDetail = null
         },
 
-        [fetchVehicleById.fulfilled]: (state, action) => {
-
+        [getBookingDetailById.fulfilled]: (state, action) => {
             const http = state.http;
             http.loading = false;
             http.success = true;
             http.error = null;
-            state.vehicleDetail = action.payload;
-
-
+            state.bookingDetail = action.payload;
         },
 
-        [fetchVehicleById.rejected]: (state, action) => {
+        [getBookingDetailById.rejected]: (state, action) => {
             const http = state.http;
             http.loading = false;
             http.success = false;
             http.error = action.payload;
-            state.vehicleDetail = null
+            state.bookingDetail = null
         },
+
+
     },
 
 });
 
-export default vehicleListSlice.reducer
-export { fetchVehicles, fetchVehicleById } 
+export default bookingSlice.reducer
+export { bookVehicle, payBooking, getBookingDetailById } 

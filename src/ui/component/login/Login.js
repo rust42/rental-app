@@ -2,55 +2,63 @@ import React, { useEffect, useState } from "react";
 import "../login/Login.css"
 
 import {
-    Checkbox,
-    Grid,
-    TextField,
-    FormControlLabel,
-    Paper,
-    Button,
-    Backdrop,
-    CircularProgress,
+  Checkbox,
+  Grid,
+  TextField,
+  FormControlLabel,
+  Paper,
+  Button,
+  Backdrop,
+  CircularProgress,
 
-  } from '@mui/material';
+} from '@mui/material';
 
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../../reducers/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [checked, setChecked] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [checked, setChecked] = useState(true);
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const login =  useSelector(selector => selector.login);
+  const login = useSelector(selector => selector?.login?.login);
+  const searchParam = useSearchParams();
 
-    useEffect(() => {
-      if (login.user != null) {
+  const { pathname, search } = useLocation();
+  const redirectPath = search?.replace("?redirect=", "")
+  useEffect(() => {
+    if (login.user != null) {
+      if (redirectPath != "") {
+        navigate(redirectPath)
+      } else {
         navigate("/");
-      }  
-    }, [login, navigate]);
 
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
-    };
-  
-    const loginButtonClicked = (event) => {
-      dispatch(loginUser({ email, password }));
-    };
+      }
+    }
+  }, [login, navigate]);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const loginButtonClicked = (event) => {
+    dispatch(loginUser({ email, password }));
+  };
 
   return (
-      <div className="login">
-          <Backdrop
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={login.loading === 'pending'}>
-          <CircularProgress color="inherit" />
-        </Backdrop>
+    <div className="login">
+      {/* <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={login.loading === 'pending'}>
+        <CircularProgress color="inherit" />
+      </Backdrop> */}
 
-        <Paper>
-          {/* <Grid className="gridview"
+      <Paper>
+        {/* <Grid className="gridview"
             container
             spacing={3}
             direction={'column'}
@@ -58,22 +66,22 @@ const Login = () => {
             alignItems={'center'}
           > */}
 
-          <h1 className="text"> SIGN IN </h1>
-          <h2 className="text2"> AND  </h2> <br/> 
-          <h2 className="text"> GET THE ACCESS </h2>
+        <h1 className="text"> SIGN IN </h1>
+        <h2 className="text2"> AND  </h2> <br />
+        <h2 className="text"> GET THE ACCESS </h2>
 
-          <div className="loginbody">
+        <div className="loginbody">
 
-           
-            <Grid className="username" item xs={12}> 
-              <TextField className="username" value={email} onChange={(event) => setEmail(event.target.value)} label="Username"></TextField>
-            </Grid>
 
-            <Grid className="password" item xs={12}>
-              <TextField className="password" label="Password" value={password} onChange={(event) => setPassword(event.target.value)} type={'password'}></TextField>
-            </Grid>
+          <Grid className="username" item xs={12}>
+            <TextField className="username" value={email} onChange={(event) => setEmail(event.target.value)} label="Username"></TextField>
+          </Grid>
 
-            <div className="keepme" >
+          <Grid className="password" item xs={12}>
+            <TextField className="password" label="Password" value={password} onChange={(event) => setPassword(event.target.value)} type={'password'}></TextField>
+          </Grid>
+
+          <div className="keepme" >
             <Grid item xs={12}>
               <FormControlLabel
                 control={
@@ -88,20 +96,20 @@ const Login = () => {
               />
             </Grid>
 
-            </div>
-
-
-
-            <Grid item xs={12}>
-              <Button className="loginbutton" fullWidth onClick={loginButtonClicked}> Login </Button>
-            </Grid>
-
           </div>
-            
-          {/* </Grid> */}
-        </Paper>
-      </div>
-    );
-  };
 
-  export default Login;
+
+
+          <Grid item xs={12}>
+            <Button className="loginbutton" fullWidth onClick={loginButtonClicked}> Login </Button>
+          </Grid>
+
+        </div>
+
+        {/* </Grid> */}
+      </Paper>
+    </div>
+  );
+};
+
+export default Login;
