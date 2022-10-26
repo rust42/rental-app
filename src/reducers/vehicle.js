@@ -16,7 +16,7 @@ const fetchVehicles = createAsyncThunk(
     "/api/vehicles",
     async (data, { rejectWithValue }) => {
         try {
-            const response = await getAllVehicleList();
+            const response = await getAllVehicleList(data);
             return response;
         } catch (error) {
             return rejectWithValue(error);

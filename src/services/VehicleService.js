@@ -1,8 +1,8 @@
 import HttpClient from './HttpClient';
 
-const getAllVehicleList = async () => {
+const getAllVehicleList = async (data) => {
     try {
-        return await HttpClient.get('/vehicles');
+        return await HttpClient.put('/vehicles/search', data);
     }
     catch (ex) {
         throw ex;

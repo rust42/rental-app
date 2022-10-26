@@ -12,34 +12,40 @@ import SortBar from "./Vbody/SortBar";
 
 const View = () => {
   const location = useLocation();
-  
+
   const dispatch = useDispatch();
   const vehicleState = useSelector(selector => selector.vehicles);
   const { http, vehicleList } = vehicleState
+  const { state } = useLocation();
+
+  const objParam = {
+    returnDate: state.endDate,
+    pickupDate: state.startDate
+  }
 
   useEffect(() => {
-      fetchVehicles()
+    fetchVehicles()
   }, [])
 
   const fetchVehicles = async () => {
-      dispatch(getVehicles())
+    dispatch(getVehicles(objParam))
   }
   return (
     <>
-        <Navbars/>
-        <VBody>
-          {http.loading &&
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    <Box sx={{ display: 'flex' }}>
-                      <CircularProgress />
-                    </Box>
-                </div>}
-          <SortBar />
+      <Navbars />
+      <VBody>
+        {http.loading &&
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex' }}>
+              <CircularProgress />
+            </Box>
+          </div>}
+        <SortBar />
 
-          {vehicleList.map(vehicle => <VehicleItem key = {vehicle.id} vehicle={vehicle} />)}
-        </VBody>
+        {vehicleList.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle} />)}
+      </VBody>
     </>
-  
+
   )
 }
 
