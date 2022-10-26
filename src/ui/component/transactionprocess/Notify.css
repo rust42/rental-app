@@ -1,0 +1,14 @@
+
+.notify{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    position:absolute;
+    width: 100%;
+}
+
+.circle{
+    margin-left: auto;
+    margin-right: auto;
+}

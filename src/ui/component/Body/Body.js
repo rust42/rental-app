@@ -11,6 +11,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { useState } from "react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
+// import car from './image/car2.jpeg';
 
 
 
@@ -38,6 +39,8 @@ const Body = () => {
     <div className="rentalbody">
       <div className="search">
         <div className="searchbar">
+          {/* <img src="/image/car2.jpeg" alt=""/> */}
+          {/* <img src="{car}" alt=""/> */}
           <input type={"text"} placeholder="Search for vechicles" name="vec" />
 
           <div className="datesearch">
