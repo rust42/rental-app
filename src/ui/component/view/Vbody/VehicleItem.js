@@ -11,23 +11,31 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
     const confirmBooking = (data) => {
         // search: `?redirect=/vehicles/${data?.id}`,
 
-        if (!loginDetail?.user) {
-            navigate({
-                pathname: "/login",
-                search: `?redirect=/view`,
-            })
-        } else {
-            const obj = {
-                ...bookingDate,
-                vehicleId: data?.id
-            }
-            dispatch(bookVehicle(obj))
-            console.log("==bookingDetail?.bookingId", bookingDetail?.bookingId)
-            if (bookingDetail?.bookingId) {
-                navigate("/booking/details/1")
-            }
+        // if (!loginDetail?.user) {
+        //     navigate({
+        //         pathname: "/login",
+        //         search: `?redirect=/view`,
+        //     })
+        // } else {
+        //     const obj = {
+        //         ...bookingDate,
+        //         vehicleId: data?.id
+        //     }
+        //     dispatch(bookVehicle(obj))
+        //     console.log("==bookingDetail?.bookingId", bookingDetail?.bookingId)
+        //     if (bookingDetail?.bookingId) {
+        //         navigate("/booking/details/1")
+        //     }
 
-        }
+        // }
+
+        navigate(`/details/${vehicle.id}`,
+            { 
+                state: {
+                    vehicle: vehicle
+                }
+            }
+        );
     }
 
 
@@ -59,6 +67,7 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
                 <div className="price"> ${vehicle.pricePerDay} </div>
                 <div> per day </div>
 
+                {/* <button className="buttons" onClick={() => confirmBooking(vehicle)}> RESERVE</button> */}
                 <button className="buttons" onClick={() => confirmBooking(vehicle)}> RESERVE</button>
 
             </div >

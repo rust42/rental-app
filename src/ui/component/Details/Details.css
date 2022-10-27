@@ -1,3 +1,80 @@
-h1{
+.maindetails{
+
+}
+
+.vehicleinfo{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5em;
+    flex-wrap: wrap;
+}
+
+.vehicledetails{
+    background-color: aliceblue;
+    width: 35%;
+    list-style: none;
+    padding: 5em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 2em; */
+
+}
+
+.vechicleinfo{
+    float: left;
+    width: 70%;
+}
+
+.vehiclename{
+   margin-bottom: 1em;
+   color: blue;
+}
+
+.lists{
+    font-weight: 500;
+}
+.desc{
+    margin-top: 5em;
+}
+
+.descque{
+    margin-top: 3em;
+    font-weight: 700;
+}
+
+.desans{
+    margin-top: 0.8em;
+    font-weight: 500;
+}
+
+.price{
     color: red;
+    font-size: 3em;
+}
+
+.vehicleimages{
+    width: 60%;
+}
+
+.vehicledetails ul{
+    list-style: none;
+}
+
+.purchase{
+    background-color: #7878f4;
+    color: white;
+    padding: 0.5em;
+    margin-top: 2em;
+    font-weight: 800;
+    border-radius: 1em;
+}
+
+.carsimage{
+    background-size: cover;
+    height: 40em;
+    width: 55em;
 }
