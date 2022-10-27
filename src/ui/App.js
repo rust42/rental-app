@@ -9,8 +9,8 @@ import Registration from '../ui/component/Registration/Registration';
 import View from './component/view/View';
 import VehicleDetail from './VehicleDetail';
 import BookingDetail from './component/bookingDetail/bookingDetail';
-import Notify from './component/transactionprocess/Notify';
 import Details from './component/Details/Details';
+import Notify from './component/PaymentResult/Notify';
 
 
 function App() {

@@ -2,6 +2,8 @@ import "./Details.css"
 import { useLocation } from "react-router-dom"
 import Navbars from "../Navbars/Navbars";
 import car from '../cards/car1.webp';
+import { useNavigate } from "react-router-dom";
+
 // import car from '../cards/minivan.webp'
 // import car from '../cards/convertible.jpeg'
 // import car from '../cards/sedan.webp'
@@ -11,7 +13,20 @@ import car from '../cards/car1.webp';
 const Details = () => {
   const location = useLocation();
   const { vehicle } = location.state;
+  const navigate = useNavigate()
+
   console.log(vehicle)
+
+  const confirmPayment = (data) => {
+
+    navigate(`/notify`,
+        { 
+            state: {
+                vehicle: vehicle
+            }
+        }
+    );
+}
 
   return (
     <div className="maindetails">
@@ -38,7 +53,7 @@ const Details = () => {
 
               <div className="pay">
                 <div className="price"> ${vehicle.pricePerDay} </div> 
-                <button className="purchase"> PURCHASE </button> 
+                <button className="purchase" onClick={() => confirmPayment(vehicle)}> PURCHASE </button> 
               </div>
           </div>
           
