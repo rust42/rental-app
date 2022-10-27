@@ -1,0 +1,21 @@
+.bookingdetail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    
+}
+
+.vdetails{
+    background-color: aliceblue;
+    padding: 4%;
+}
+.bookingbutton{
+    background-color: aliceblue;
+    padding: 9%;
+
+}
+
+.vdetails .lists li{
+    margin: 1em;
+}
