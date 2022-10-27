@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom';
 import Stripe from "react-stripe-checkout";
-// import { payBooking } from '../../../reducers/booking'
 import { getBookingDetailById } from '../../../reducers/booking';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

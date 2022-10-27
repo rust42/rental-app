@@ -1,46 +1,21 @@
 
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { bookVehicle } from '././../../../../reducers/booking'
 import { getFirstImage } from "./car_images";
 const VehicleItem = ({ vehicle, bookingDate }) => {
 
-    const loginDetail = useSelector(selector => selector?.login?.login)
-    const bookingDetail = useSelector(selector => selector?.bookings?.bookingDetail)
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const confirmBooking = (data) => {
-        // search: `?redirect=/vehicles/${data?.id}`,
-
-        // if (!loginDetail?.user) {
-        //     navigate({
-        //         pathname: "/login",
-        //         search: `?redirect=/view`,
-        //     })
-        // } else {
-        //     const obj = {
-        //         ...bookingDate,
-        //         vehicleId: data?.id
-        //     }
-        //     dispatch(bookVehicle(obj))
-        //     console.log("==bookingDetail?.bookingId", bookingDetail?.bookingId)
-        //     if (bookingDetail?.bookingId) {
-        //         navigate("/booking/details/1")
-        //     }
-
-        // }
-
         navigate(`/details/${vehicle.id}`,
-            { 
+            {
                 state: {
                     vehicle: vehicle,
-                    bookingDate:bookingDate
+                    bookingDate: bookingDate
                 }
             }
         );
     }
 
-   
+
 
     return <div className="viewcard">
         <div className="cardimg">

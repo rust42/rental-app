@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom"
-import Navbars from "../Navbars/Navbars"
 import VBody from "./Vbody/VBody"
 import VehicleItem from './Vbody/VehicleItem';
 import { useDispatch, useSelector } from "react-redux";
@@ -21,14 +20,15 @@ const View = () => {
 
   useEffect(() => {
     dispatch(getVehicles(objParam))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
   const showvehicleItems = (items) => {
     if (items.length > 0) {
       return <div>
-      <SortBar />
-        { vehicleList.map(vehicle => 
-              <VehicleItem key={vehicle.id} vehicle={vehicle} bookingDate={objParam} />) }
+        <SortBar />
+        {vehicleList.map(vehicle =>
+          <VehicleItem key={vehicle.id} vehicle={vehicle} bookingDate={objParam} />)}
       </div>;
     };
   };
@@ -36,13 +36,13 @@ const View = () => {
   return (
     <>
       <VBody>
-        { 
-        http.loading &&
+        {
+          http.loading &&
           <LoadingIndicator />
-            }
+        }
 
-        { !http.loading && 
-            showvehicleItems(vehicleList) };
+        {!http.loading &&
+          showvehicleItems(vehicleList)};
       </VBody>
     </>
 
