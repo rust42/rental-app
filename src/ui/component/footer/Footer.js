@@ -60,7 +60,7 @@ const Footer = () => {
           <li className="items">Personal information</li>
         </ul>
       </div>
-      <div className="footertext"> MIU Rental Service <br/> Copyright © SA BROS  </div>
+      {/* <div className="footertext"> MIU Rental Service <br/> Copyright © SA BROS  </div> */}
     </div>
   );
 };

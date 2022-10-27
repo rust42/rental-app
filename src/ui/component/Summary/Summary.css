@@ -14,17 +14,17 @@
 .searchbars{
   width: 45vh;
   height: 5vh;
-
+  display: flex;
 }
 
 .tagline{
   font-size: 1em;
 }
 .searchbars button{
-  /* height: 4vh; */
+  height: 40px;
   width: 15vh;
   border-radius: 10%;
-  margin-top: 0.5em;
+  margin-top: 0px;
 }
 
 .inputfield{
