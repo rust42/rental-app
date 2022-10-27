@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Stripe from "react-stripe-checkout";
-import { payBooking } from '../../../reducers/booking'
+// import { payBooking } from '../../../reducers/booking'
 import { getBookingDetailById } from '../../../reducers/booking';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { payBookingAmount } from '../../../services/booking';
 
 export default function BookingDetail() {
 
     const [currency] = useState("USD")
     const [loading, setLoading] = useState(false)
+
+    // can be one of idle, pending, success, error, 
+    const [paymentStatus, setPaymentStatus] = useState('idle');
+    const [paymentError, setPaymentError] = useState('');
+
+    const navigate = useNavigate();
+
 
     const dispatch = useDispatch()
     const { id } = useParams()
@@ -29,11 +37,7 @@ export default function BookingDetail() {
     const [description] = useState(`Confirm Booking`)
 
 
-
-
     async function handleToken(token) {
-        console.log("==token", token)
-
         const data = {
             token: token?.id,
             amount: JSON.parse(localStorage.getItem("bookingDetail"))?.totalPrice,
@@ -42,14 +46,20 @@ export default function BookingDetail() {
             tokenType: token?.tokenType,
             bookingId: JSON.parse(localStorage.getItem("bookingDetail"))?.bookingId,
             email: token?.email
-
         }
-        dispatch(payBooking(data)).then(({ payload }) => {
-            console.log(payload)
-            toast.success("Successfully paid")
-            localStorage.removeItem("bookingDetail")
 
-        })
+        try {
+            const payload = await payBookingAmount(data);
+            setPaymentStatus('success');
+            console.log(payload);
+            toast.success("Successfully paid");
+            localStorage.removeItem("bookingDetail");
+            navigate('/confirmation', { state: data});
+        } catch (error) {
+            toast.error("Could not complete the payment");
+            setPaymentError(error);
+            setPaymentStatus('error');
+        }
     }
 
 

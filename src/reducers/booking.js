@@ -24,19 +24,6 @@ const bookVehicle = createAsyncThunk(
     }
 );
 
-const payBooking = createAsyncThunk(
-    "/api/bookings",
-    async (data, { rejectWithValue }) => {
-        try {
-            const response = await createBooking(data);
-            return response;
-        } catch (error) {
-            return rejectWithValue(error);
-        }
-    }
-);
-
-
 const getBookingDetailById = createAsyncThunk(
     "/api/bookings",
     async (data, { rejectWithValue }) => {
@@ -103,11 +90,9 @@ const bookingSlice = createSlice({
             http.error = action.payload;
             state.bookingDetail = null
         },
-
-
     },
 
 });
 
 export default bookingSlice.reducer
-export { bookVehicle, payBooking, getBookingDetailById } 
+export { bookVehicle, getBookingDetailById } 

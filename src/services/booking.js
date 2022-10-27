@@ -22,7 +22,7 @@ const getBookById = async (id) => {
 
 const payBookingAmount = async (data) => {
     try {
-        return await HttpClient.get(`/payments`, data);
+        return await HttpClient.post(`/payments`, data);
     }
     catch (ex) {
         throw ex;
