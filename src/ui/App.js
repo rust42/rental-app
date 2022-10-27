@@ -11,12 +11,14 @@ import VehicleDetail from './VehicleDetail';
 import BookingDetail from './component/bookingDetail/bookingDetail';
 import Details from './component/Details/Details';
 import Notify from './component/PaymentResult/Notify';
+import Navbars from './component/Navbars/Navbars';
 
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <Navbars />
         <BrowserRouter>
           <Routes>
             <Route path='/login' element={<Login />}></Route>

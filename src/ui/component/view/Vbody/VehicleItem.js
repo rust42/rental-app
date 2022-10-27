@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { bookVehicle } from '././../../../../reducers/booking'
+import { getFirstImage } from "./car_images";
 const VehicleItem = ({ vehicle, bookingDate }) => {
 
     const loginDetail = useSelector(selector => selector?.login?.login)
@@ -38,10 +39,11 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
         );
     }
 
+   
 
     return <div className="viewcard">
         <div className="cardimg">
-            <img src="/image/car1.webp" alt="next" />
+            <img src={getFirstImage(vehicle)} alt="next" />
         </div>
 
         <div className="details">

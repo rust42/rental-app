@@ -3,22 +3,13 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Navbars from '../Navbars/Navbars';
 import { useState } from 'react';
+import LoadingIndicator from '../common/LoadingIndicator';
 
-const LoadingIndicator = () => {
-        return <div className="notify">  
-              <div className="circle">
-                  <Box sx={{ display: 'flex' }}>
-                      <CircularProgress />
-                  </Box>
-              </div>
-        </div>;
-};
 
 
 const ContainerNavbar = ({children}) => {
   return <div className="notifybody">
   <div className="navbar">
-        <Navbars/>
         {children}
   </div>
   </div>;

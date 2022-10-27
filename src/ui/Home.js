@@ -9,7 +9,7 @@ import Team from "./component/team/Team";
 const Home = () => {
     return <>
     
-           <Navbars/>
+           {/* <Navbars/> */}
            <Body/>
            <Cards/> 
            <Team/>

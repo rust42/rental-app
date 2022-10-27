@@ -31,10 +31,6 @@ const Details = () => {
   return (
     <div className="maindetails">
 
-        <div className="navbar">
-            <Navbars/>
-        </div>
-
         <div className="vehicleinfo">
           <div className="vehicledetails">
             <div className="vechicleinfo">
