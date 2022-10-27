@@ -33,7 +33,8 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
         navigate(`/details/${vehicle.id}`,
             { 
                 state: {
-                    vehicle: vehicle
+                    vehicle: vehicle,
+                    bookingDate:bookingDate
                 }
             }
         );

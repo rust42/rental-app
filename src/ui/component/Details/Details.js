@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom"
 import Navbars from "../Navbars/Navbars";
 import car from '../cards/car1.webp';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { bookVehicle } from "../../../reducers/booking";
+
 
 // import car from '../cards/minivan.webp'
 // import car from '../cards/convertible.jpeg'
@@ -12,10 +15,36 @@ import { useNavigate } from "react-router-dom";
 
 const Details = () => {
   const location = useLocation();
-  const { vehicle } = location.state;
+  const { vehicle,bookingDate } = location.state;
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  console.log(vehicle)
+  const loginDetail = useSelector(selector => selector?.login?.login)
+
+  const bookNow = () => {
+        //  search: `?redirect=/vehicles/${data?.id}`,
+
+        if (!loginDetail?.user) {
+            navigate({
+                pathname: "/login",
+                search: `?redirect=/view`,
+            })
+        } else {
+            const obj = {
+                ...bookingDate,
+                vehicleId: vehicle?.id
+            }
+            dispatch(bookVehicle(obj)).then(({payload}) => {
+              console.log("res",payload)
+              navigate(`/booking/details/${payload?.bookingId}`)
+            })
+            // console.log("==bookingDetail?.bookingId", bookingDetail?.bookingId)
+            // if (bookingDetail?.bookingId) {
+            //     navigate("/booking/details/1")
+            // }
+
+        }
+  }
 
   const confirmPayment = (data) => {
 
@@ -49,7 +78,7 @@ const Details = () => {
 
               <div className="pay">
                 <div className="price"> ${vehicle.pricePerDay} </div> 
-                <button className="purchase" onClick={() => confirmPayment(vehicle)}> PURCHASE </button> 
+                <button className="purchase" onClick={() => bookNow(vehicle)}> PURCHASE </button> 
               </div>
           </div>
           
