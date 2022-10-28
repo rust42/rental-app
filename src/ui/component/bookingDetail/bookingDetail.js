@@ -56,7 +56,7 @@ export default function BookingDetail() {
             console.log(payload);
             toast.success("Successfully paid");
             localStorage.removeItem("bookingDetail");
-            navigate('/confirmation', { state: data});
+            navigate('/confirmation', { state: { bookingDetail, data }});
         } catch (error) {
             toast.error("Could not complete the payment");
             setPaymentError(error);

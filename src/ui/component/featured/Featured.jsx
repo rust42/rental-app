@@ -17,8 +17,8 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Berlin</h1>
-              <h2>properties</h2>
+              <h1>BMW</h1>
+             
             </div>
           </div>
 
@@ -29,19 +29,19 @@ const Featured = () => {
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>Madrid</h1>
-              <h2> properties</h2>
+              <h1>Mercedes</h1>
+            
             </div>
           </div>
           <div className="featuredItem">
             <img
-              src="https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="https://images.pexels.com/photos/12358194/pexels-photo-12358194.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               alt=""
               className="featuredImg"
             />
             <div className="featuredTitles">
-              <h1>London</h1>
-              <h2> properties</h2>
+              <h1>Range Rover</h1>
+              
             </div>
           </div>
         </>

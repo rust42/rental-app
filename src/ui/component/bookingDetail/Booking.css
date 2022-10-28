@@ -19,3 +19,50 @@
 .vdetails .lists li{
     margin: 1em;
 }
+
+/* ------- CONFORMATION --------- */
+.conformationbody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    width: 50%; 
+    margin-left: 25em;
+     margin-top: 5em;
+
+}
+.conformationdetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.conformationdetails .lists{
+    /* background-color: rgb(227, 113, 113); */
+    margin: 4em;
+}
+.conformationpaymentdetails{
+
+}
+.confirmationtext{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.conformationpaymentdetails .status{
+    font-size: 1.5em;
+    color: blue;
+}
+
+.confirmationtext h2{
+    color: blue;
+}
+.confirmationtext h3{
+    color: brown;
+}
