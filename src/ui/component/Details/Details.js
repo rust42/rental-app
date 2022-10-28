@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { bookVehicle } from "../../../reducers/booking";
 import { getFirstImage } from "../view/Vbody/car_images";
+import Review from "./Review";
 
 
 const Details = () => {
@@ -63,7 +64,7 @@ const Details = () => {
         </div>
 
       </div>
-
+      <Review vehicleId={vehicle.id} />
     </div>
   )
 }

@@ -1,7 +1,17 @@
 import "../Navbars/Navbars.css"
 import imgs from '../Navbars/logo.png'
+import { useSelector } from "react-redux"
+import { logout } from "../../../reducers/auth";
+import { useDispatch } from "react-redux";
 
 const Navbars = () => {
+
+  const dispatch = useDispatch();
+  const logoutButtonClicked = () => {
+    dispatch(logout());
+  };
+
+  const user = useSelector(state => state.login).login.user;
   return (
     <div className="mainbody">
 
@@ -26,13 +36,16 @@ const Navbars = () => {
           <a href="/"> Language </a>
           <a href="/"> Find a Location </a>
 
-          <a href="login">
+          {!user && <a href="/login">
             <button className="button"> Sign in</button>
-          </a>
-          <a href="registration">
-            <button className="button"> Sign Up </button>
-          </a>
+          </a>}
+          {!user &&
+            <a href="/registration">
+              <button className="button"> Sign Up </button>
+            </a>}
 
+          {user &&
+            <button className="button" onClick={logoutButtonClicked}> Sign out</button>}
         </div>
 
         <div className="secondnavbar">
