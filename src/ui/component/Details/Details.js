@@ -1,30 +1,37 @@
 import "./Details.css"
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { bookVehicle } from "../../../reducers/booking";
 import { getFirstImage } from "../view/Vbody/car_images";
 import Review from "./Review";
-
+import { useEffect } from "react";
+import { fetchVehicleById } from './../../../reducers/vehicle'
 
 const Details = () => {
   const location = useLocation();
-  const { vehicle, bookingDate } = location.state;
+  const { id } = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
+  const { search } = useLocation()
+  const objParam = Object.fromEntries(new URLSearchParams(search));
+  const vehicle = useSelector(selector => selector?.vehicles?.vehicleDetail)
   const loginDetail = useSelector(selector => selector?.login?.login)
+  console.log("===", objParam)
+  useEffect(() => {
+    dispatch(fetchVehicleById(id))
+  }, [id])
 
   const bookNow = () => {
     if (!loginDetail?.user) {
       navigate({
         pathname: "/login",
-        search: `?redirect=/view`,
+        search: `?redirect=/details/${vehicle.id}?pickupDate=${objParam?.pickupDate}&returnDate=${objParam?.returnDate}`
       })
     } else {
       const obj = {
-        ...bookingDate,
-        vehicleId: vehicle?.id
+        ...objParam,
+        vehicleId: id
       }
       dispatch(bookVehicle(obj)).then(({ payload }) => {
         console.log("res", payload)
@@ -33,6 +40,10 @@ const Details = () => {
     }
   }
 
+
+
+
+  if (vehicle == null) return (<div>loading...</div>)
   return (
     <div className="maindetails">
 

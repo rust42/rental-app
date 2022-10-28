@@ -6,6 +6,8 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
     const navigate = useNavigate()
     const confirmBooking = (data) => {
         navigate(`/details/${vehicle.id}`,
+
+
             {
                 state: {
                     vehicle: vehicle,
@@ -13,6 +15,11 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
                 }
             }
         );
+
+        navigate({
+            pathname: `/details/${vehicle.id}`,
+            search: `?pickupDate=${bookingDate?.pickupDate}&returnDate=${bookingDate?.returnDate}`
+        })
     }
 
 

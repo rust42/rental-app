@@ -75,6 +75,6 @@
 
 .carsimage{
     background-size: cover;
-    height: 40em;
+    /* height: 40em; */
     width: 55em;
 }
