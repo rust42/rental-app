@@ -24,6 +24,7 @@ const bookVehicle = createAsyncThunk(
     }
 );
 
+
 const getBookingDetailById = createAsyncThunk(
     "/api/bookings",
     async (data, { rejectWithValue }) => {

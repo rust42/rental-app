@@ -13,9 +13,10 @@ const Home = () => {
     
            {/* <Navbars/> */}
            <Body/>
+
            <Feature />
            <div className="homeContainer">
-           <h1 className="homeTitle">Browse by property type</h1>
+           <h1 className="homeTitle">Browse By Types </h1>
            </div>
            <Cards/> 
            {/* <Team/> */}
