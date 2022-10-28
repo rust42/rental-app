@@ -5,7 +5,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Body/Body.css"
-import search from '../Body/search.png'
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -69,9 +68,9 @@ const Body = () => {
             </div>
           </div>
           <button onClick={searchButtonClicked}>
-             {/* <img src={search} alt="search" />  */}
-             <FontAwesomeIcon icon={faSearch} />
-             </button>
+            {/* <img src={search} alt="search" />  */}
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
         </div>
       </div>
     </div>

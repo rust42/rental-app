@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchVehicleById } from "./../reducers/vehicle";
 import { addReview, getAllReviewsByVehicleId } from './../reducers/review'
 
 import Box from "@mui/material/Box";

@@ -1,17 +1,14 @@
 import './Notify.css';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import Navbars from '../Navbars/Navbars';
 import { useState } from 'react';
 import LoadingIndicator from '../common/LoadingIndicator';
 
 
 
-const ContainerNavbar = ({children}) => {
+const ContainerNavbar = ({ children }) => {
   return <div className="notifybody">
-  <div className="navbar">
-        {children}
-  </div>
+    <div className="navbar">
+      {children}
+    </div>
   </div>;
 };
 
@@ -19,7 +16,7 @@ const ContainerNavbar = ({children}) => {
 const Notify = () => {
 
   const [isAnimating, setAnimating] = useState(true);
-  
+
 
   useState(() => {
     setTimeout(() => {
@@ -33,9 +30,9 @@ const Notify = () => {
   }
 
   return <ContainerNavbar>
-      <h1> Hey I am a child</h1>
-    </ContainerNavbar>
-  
+    <h1> Hey I am a child</h1>
+  </ContainerNavbar>
+
 }
 
 export default Notify
