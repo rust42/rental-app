@@ -2,6 +2,7 @@ import { CircularProgress } from '@mui/material';
 import { useState } from 'react';
 import { getAllReviewByVehicle } from '../../../services/reviewService';
 import Rating from '@mui/material/Rating';
+import "./Details.css"
 
 const Review = ({ vehicleId }) => {
 
@@ -48,11 +49,18 @@ const Review = ({ vehicleId }) => {
     }, [vehicleId]);
 
 
-    return <div>
-        <h1>Reviews</h1>
-        {reviews.status === 'pending' && <CircularProgress color="inherit" />}
-        {reviewsElements()}
-    </div>
+    return (
+                <div className='reviewbody'>
+                    <div className='reviewtext'>
+                        Reviews
+                    </div>
+                    <div className='reviewmain'> 
+                            {reviews.status === 'pending' && <CircularProgress color="inherit" />}
+                            {reviewsElements()}
+                    </div>
+
+                </div>
+    )
 };
 
 

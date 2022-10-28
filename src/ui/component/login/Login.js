@@ -60,10 +60,13 @@ const Login = () => {
             justify={'center'}
             alignItems={'center'}
           > */}
+        <div className="secondarytext">
+          
+            <h1 className="text"> SIGN IN </h1>
+            <h2 className="text2"> AND  </h2> <br />
+            <h2 className="text"> GET THE ACCESS </h2>  
+        </div>  
 
-        <h1 className="text"> SIGN IN </h1>
-        <h2 className="text2"> AND  </h2> <br />
-        <h2 className="text"> GET THE ACCESS </h2>
 
         <div className="loginbody">
 
