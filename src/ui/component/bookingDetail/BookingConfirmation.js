@@ -29,7 +29,7 @@ const BookingConfirmation = () => {
                 <div className="conformationpaymentdetails">
                     <h3>{data.currency} </h3>
                     <div className='price'> $ {bookingDetail.totalPrice}</div> <br /> <br />
-                    <div className='status'> {bookingDetail.bookingStatus} </div> <br /> <br />
+                    {/* <div className='status'> {data.BookingConfirmation} </div> <br /> <br /> */}
                 </div>
             </div>
 
