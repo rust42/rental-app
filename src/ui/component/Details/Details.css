@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 5em;
     flex-wrap: wrap;
 }
 
@@ -16,7 +15,6 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    /* margin: 2em; */
 
 }
 
@@ -74,3 +72,32 @@
     /* height: 40em; */
     width: 55em;
 }
+
+
+
+
+/* --------- REVIEW CSS ---------- */
+
+.reviewbody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: cornsilk;
+}
+
+.reviewbody .reviewtext{
+    font-weight: 600;
+    font-size: 2em;
+    color: rgb(17, 17, 245);
+    margin: 0.8em;
+}
+
+.reviewbody .reviewmain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
