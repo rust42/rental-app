@@ -1,6 +1,7 @@
 
 import {
   faCalendarDays,
+  faSearch
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Body/Body.css"
@@ -41,7 +42,7 @@ const Body = () => {
         <div className="searchbar">
           {/* <img src="/image/car2.jpeg" alt=""/> */}
           {/* <img src="{car}" alt=""/> */}
-          <input type={"text"} placeholder="Search for vechicles" name="vec" />
+          <input type={"text"} placeholder="Search for Vehicles" name="vec" />
 
           <div className="datesearch">
             <div className="dateSearchItem">
@@ -67,7 +68,10 @@ const Body = () => {
               )}
             </div>
           </div>
-          <button onClick={searchButtonClicked}> <img src={search} alt="search" /> </button>
+          <button onClick={searchButtonClicked}>
+             {/* <img src={search} alt="search" />  */}
+             <FontAwesomeIcon icon={faSearch} />
+             </button>
         </div>
       </div>
     </div>

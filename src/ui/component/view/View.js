@@ -1,11 +1,10 @@
 import { useLocation } from "react-router-dom"
-import Navbars from "../Navbars/Navbars"
 import VBody from "./Vbody/VBody"
 import VehicleItem from './Vbody/VehicleItem';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchVehicles as getVehicles } from "../../../reducers/vehicle";
-import { Box, CircularProgress } from "@mui/material";
+import LoadingIndicator from '../common/LoadingIndicator';
 
 import SortBar from "./Vbody/SortBar";
 
@@ -24,19 +23,26 @@ const View = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
+  const showvehicleItems = (items) => {
+    if (items.length > 0) {
+      return <div>
+        <SortBar />
+        {vehicleList.map(vehicle =>
+          <VehicleItem key={vehicle.id} vehicle={vehicle} bookingDate={objParam} />)}
+      </div>;
+    };
+  };
+
   return (
     <>
-      <Navbars />
       <VBody>
-        {http.loading &&
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Box sx={{ display: 'flex' }}>
-              <CircularProgress />
-            </Box>
-          </div>}
-        <SortBar />
+        {
+          http.loading &&
+          <LoadingIndicator />
+        }
 
-        {vehicleList.map(vehicle => <VehicleItem key={vehicle.id} vehicle={vehicle} bookingDate={objParam} />)}
+        {!http.loading &&
+          showvehicleItems(vehicleList)};
       </VBody>
     </>
 

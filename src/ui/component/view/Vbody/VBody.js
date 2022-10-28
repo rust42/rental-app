@@ -3,16 +3,15 @@ const VBody = ({ children }) => {
     return (
         <div className="viewbody">
             <div className="filters">
+                
                 <h2> FILTER BY </h2>
-
+                    <br />
+                    <h3 className="item">
+                         Exclusive Offers
+                    </h3>
+                    <br />
                 <ul className="filterlist">
                     {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Exclusive Offers </li>{" "}
-                    </h3>{" "}
-                    <br />
                     <li className="item">
                         {" "}
                         <label>
@@ -50,14 +49,13 @@ const VBody = ({ children }) => {
                     </li>
                 </ul>
 
+                <br/>
+                <h3 className="item">
+                Vechicle type
+                </h3>
+                <br/>
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Vechicle type </li>{" "}
-                    </h3>{" "}
-                    <br />
+                   
                     <li className="item">
                         {" "}
                         <label>
@@ -94,15 +92,12 @@ const VBody = ({ children }) => {
                         </label>{" "}
                     </li>
                 </ul>
-
+                <br/>
+                <h3 className="item">
+                Car types
+                </h3>
+                <br/>
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Car types </li>{" "}
-                    </h3>{" "}
-                    <br />
                     <li className="item">
                         {" "}
                         <label>
@@ -167,15 +162,12 @@ const VBody = ({ children }) => {
                         </label>{" "}
                     </li>
                 </ul>
-
+                <br/>
+                <h3 className="item">
+                Capacity
+                </h3>
+                <br/>
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Capacity </li>{" "}
-                    </h3>{" "}
-                    <br />
                     <li className="item">
                         {" "}
                         <label>
@@ -184,15 +176,12 @@ const VBody = ({ children }) => {
                         </label>{" "}
                     </li>
                 </ul>
-
+                <br/>
+                <h3 className="item">
+                Insurances
+                </h3>
+                <br/>
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Insurances </li>{" "}
-                    </h3>{" "}
-                    <br />
                     <li className="item">
                         {" "}
                         <label>
@@ -208,15 +197,13 @@ const VBody = ({ children }) => {
                         </label>{" "}
                     </li>
                 </ul>
-
+                
+                    <br />
+                    <h3 className="item"> Total Price 
+                    </h3>
+                    <br />
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Total Price </li>{" "}
-                    </h3>{" "}
-                    <br />
+                   
                     <li className="item">
                         {" "}
                         <label>
@@ -253,15 +240,13 @@ const VBody = ({ children }) => {
                         </label>{" "}
                     </li>
                 </ul>
+                <br/>
 
+                <h3 className="item">
+                Specifications
+                </h3>
+                <br/>
                 <ul className="filterlist">
-                    {" "}
-                    <br />
-                    <h3>
-                        {" "}
-                        <li className="item"> Specifications </li>{" "}
-                    </h3>{" "}
-                    <br />
                     <li className="item">
                         {" "}
                         <label>

@@ -1,39 +1,25 @@
 
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { bookVehicle } from '././../../../../reducers/booking'
+import { getFirstImage } from "./car_images";
 const VehicleItem = ({ vehicle, bookingDate }) => {
 
-    const loginDetail = useSelector(selector => selector?.login?.login)
-    const bookingDetail = useSelector(selector => selector?.bookings?.bookingDetail)
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const confirmBooking = (data) => {
-        // search: `?redirect=/vehicles/${data?.id}`,
-
-        if (!loginDetail?.user) {
-            navigate({
-                pathname: "/login",
-                search: `?redirect=/view`,
-            })
-        } else {
-            const obj = {
-                ...bookingDate,
-                vehicleId: data?.id
+        navigate(`/details/${vehicle.id}`,
+            {
+                state: {
+                    vehicle: vehicle,
+                    bookingDate: bookingDate
+                }
             }
-            dispatch(bookVehicle(obj))
-            console.log("==bookingDetail?.bookingId", bookingDetail?.bookingId)
-            if (bookingDetail?.bookingId) {
-                navigate("/booking/details/1")
-            }
-
-        }
+        );
     }
+
 
 
     return <div className="viewcard">
         <div className="cardimg">
-            <img src="/image/car1.webp" alt="next" />
+            <img src={getFirstImage(vehicle)} alt="next" />
         </div>
 
         <div className="details">
@@ -59,6 +45,7 @@ const VehicleItem = ({ vehicle, bookingDate }) => {
                 <div className="price"> ${vehicle.pricePerDay} </div>
                 <div> per day </div>
 
+                {/* <button className="buttons" onClick={() => confirmBooking(vehicle)}> RESERVE</button> */}
                 <button className="buttons" onClick={() => confirmBooking(vehicle)}> RESERVE</button>
 
             </div >

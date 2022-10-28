@@ -1,3 +1,7 @@
+.App {
+    text-align: left;
+}
+
 .viewbody{
     width: 100%;
     display: flex;
@@ -7,6 +11,8 @@
 }
 
 .filters{
+    padding-left: 20%;
+    padding-top: 20px;
     width: 40%;
 }
 
@@ -17,7 +23,7 @@
 }
 
 .viewcards{
-    width: 55%;
+    width: 100%;
     background-color: whitesmoke;
     border-radius: 20px;
     height: 100%;
@@ -29,12 +35,12 @@
     background-color:  #3cbd7d;
     margin: 30px;
     display: flex;
-    height: 18vh;
+    height: 200px;
 }
 
 .cardimg{ 
     background-color: rgb(226, 239, 251);
-    height: 100%;
+    height: 200px;
     margin-bottom: 18px;
     background-size:auto;
     border-radius: 20px 0px 0px 20px;
@@ -42,7 +48,9 @@
 
 }
 .cardimg img{
-    height: 20vh;
+    height: 200px;
+    width: 40vh;
+    object-fit: contain;
 }
 
 .recommended *{
@@ -69,7 +77,9 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
 }
 
 .lists{

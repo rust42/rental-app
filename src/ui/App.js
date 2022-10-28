@@ -9,13 +9,17 @@ import Registration from '../ui/component/Registration/Registration';
 import View from './component/view/View';
 import VehicleDetail from './VehicleDetail';
 import BookingDetail from './component/bookingDetail/bookingDetail';
-import Notify from './component/transactionprocess/Notify';
+import BookingConfirmation from './component/bookingDetail/BookingConfirmation';
+import Details from './component/Details/Details';
+import Notify from './component/PaymentResult/Notify';
+import Navbars from './component/Navbars/Navbars';
 
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <Navbars />
         <BrowserRouter>
           <Routes>
             <Route path='/login' element={<Login />}></Route>
@@ -24,7 +28,8 @@ function App() {
             <Route path="/vehicles/:id" element={<VehicleDetail />}></Route>
             <Route path="/booking/details/:id" element={<BookingDetail />}></Route>
             <Route path='/notify' element={<Notify/>}> </Route> 
-
+            <Route path='/details/:id' element={<Details/>}> </Route> 
+            <Route path='/confirmation' element={<BookingConfirmation />}> </Route> 
             <Route index element={<Home />}></Route>
           </Routes>
         </BrowserRouter>

@@ -49,39 +49,40 @@
     flex-wrap: wrap;
 }
 
+.firstnavbar > a {
+    color: #fff;
+}
+
 .secondnavbar{
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    font-size: large;
+    font-size: 14px;
     font-weight: bold;
     background-color: #58a764;
     flex-wrap: wrap;
 
 }
 
-.firstnavbar a {
-    color: blue;
-}
 .secondnavbar a {
     color: #fff;
 }
+
 a{
     text-decoration: none;
 }
-
-
 
 .firstnavbar .sign{
     display: grid;
 }
 .button{
-    background-color: rgb(111, 176, 12);
-    padding: 4px;
-    font-size: large;
+    background-color: #fff;
+    padding: 4px 10px;
+    font-size: 16px;
     font-weight: bold;
     margin: 2px ;
     border-color: rgb(92, 142, 17);
-    color:whitesmoke;
+    color: rgb(111, 176, 12);
+    border-radius: 5px;
 }
