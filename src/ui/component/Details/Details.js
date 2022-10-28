@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { fetchVehicleById } from './../../../reducers/vehicle'
 
 const Details = () => {
-  const location = useLocation();
   const { id } = useParams()
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -20,7 +19,7 @@ const Details = () => {
   console.log("===", objParam)
   useEffect(() => {
     dispatch(fetchVehicleById(id))
-  }, [id])
+  }, [dispatch, id])
 
   const bookNow = () => {
     if (!loginDetail?.user) {
